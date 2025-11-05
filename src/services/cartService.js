@@ -1,10 +1,6 @@
 import axios from "axios";
 
-// ✅ Backend internal service (inside K8s) or local fallback
-const CART_API_URL =
-  process.env.NODE_ENV === "production"
-    ? "http://backend:8080/back1/api/cart"
-    : "http://localhost:30081/back1/api/cart";
+const CART_API_URL = "http://localhost:30083/back1/api/cart";
 
 export const addToCart = async (userId, productId) => {
   return await axios.post(`${CART_API_URL}/add`, {
