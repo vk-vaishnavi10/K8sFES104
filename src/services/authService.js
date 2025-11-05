@@ -1,9 +1,6 @@
 import axios from "axios";
 
-const API_URL =
-  process.env.NODE_ENV === "production"
-    ? "http://backend:8080/back1/auth"
-    : "http://localhost:30081/back1/auth";
+const API_URL = "http://localhost:30083/back1/auth";
 
 export const login = async (username, password) => {
   const response = await axios.post(`${API_URL}/login`, { username, password });
